@@ -62,7 +62,9 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-black to-zinc-900 py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-          Türkçe Dil Analizi
+          Hacı Şöhret Demiröz Fen Lisesi<br/>
+Türkçe Düşün Türkçe Yaz<br/>
+          Tübitak 2204 Projesi
         </h1>
 
         <TextInput onAnalyze={handleAnalyze} isLoading={isLoading} />
