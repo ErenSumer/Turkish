@@ -33,7 +33,7 @@ export default function Home() {
       const data = await response.json();
 
       if (!data.success) {
-        throw new Error(data.error || "Analiz sırasında bir hata oluştu");
+        throw new Error(data.error || "Çözümleme sırasında bir hata oluştu");
       }
 
       const analysisHistory: AnalysisHistory = {
