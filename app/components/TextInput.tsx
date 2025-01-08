@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 
 interface TextInputProps {
   onAnalyze: (text: string) => void;
@@ -7,6 +7,14 @@ interface TextInputProps {
 
 export default function TextInput({ onAnalyze, isLoading }: TextInputProps) {
   const [text, setText] = useState("");
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      if (text.trim() && !isLoading) {
+        onAnalyze(text);
+      }
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -21,6 +29,7 @@ export default function TextInput({ onAnalyze, isLoading }: TextInputProps) {
       <button
         onClick={() => onAnalyze(text)}
         disabled={isLoading || !text.trim()}
+        onKeyDown={handleKeyDown}
         className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium
                rounded-xl hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed
                transition-all transform hover:scale-105 active:scale-95"
