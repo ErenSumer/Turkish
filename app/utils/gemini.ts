@@ -13,7 +13,7 @@ export async function analyzeText(text: string): Promise<AnalysisResult> {
     Analizi şu başlıklar altında yap ve her başlığı ### ile işaretle:
 
     ###Yabancı Kelimeler
-    (Metindeki yabancı kökenli kelimeleri listele)
+    (Metindeki yabancı kökenli kelimeleri listele, bu yabacı kelimelere türkçe kökenli olmayan herhangi bir kelime dahildir)
 
     ###Türkçe Alternatifler
     (Her yabancı kelime için Türkçe karşılıklar öner)
