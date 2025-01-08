@@ -9,7 +9,7 @@ export default function AnalysisResult({ result }: AnalysisResultProps) {
     <div className="w-full max-w-3xl mx-auto mt-12 space-y-8 border border-white/10 bg-black/40 backdrop-blur-sm p-8 rounded-2xl shadow-2xl">
       <div className="border-b border-white/10 pb-6">
         <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-          Analiz Sonuçları
+          Çözümleme Sonuçları
         </h2>
       </div>
       <section className="space-y-4">
@@ -39,7 +39,7 @@ export default function AnalysisResult({ result }: AnalysisResultProps) {
       {/* Turkish Alternatives Section */}
       <section className="space-y-4">
         <h3 className="text-2xl font-semibold text-white/90">
-          Türkçe Alternatifler
+          Türkçe Seçenekler
         </h3>
         <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl">
           {result.alternatives.map((item, index) => (
@@ -63,7 +63,7 @@ export default function AnalysisResult({ result }: AnalysisResultProps) {
 
       {/* Detailed Analysis Section */}
       <section className="space-y-4">
-        <h3 className="text-2xl font-semibold text-white/90">Detaylı Analiz</h3>
+        <h3 className="text-2xl font-semibold text-white/90">Detaylı Çözümleme</h3>
         <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl">
           <p className="text-white whitespace-pre-line">{result.analysis}</p>
         </div>
