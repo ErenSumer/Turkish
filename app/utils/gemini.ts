@@ -14,14 +14,13 @@ export async function analyzeText(text: string): Promise<AnalysisResult> {
     Analizi şu başlıklar altında yap ve her başlığı ### ile işaretle:
 
     ###Yabancı Kelimeler
-<<<<<<< HEAD
+
     (Metindeki yabancı kökenli kelimeleri listele)
     ###Düzeltme
     (Metinde tespit ettiğin yabancı kelimeleri cümlenin anlamına göre en iyi düzeltilmiş cümleyi öner, eğer cümlede yabancı kelime bulunamadıysa cümleyi döndür(örn İşe adapte olamıyorum -> İşe uyum sağlayamıyorum))
-=======
+
     (Metindeki yabancı kökenli kelimeleri listele, bu yabacı kelimelere türkçe kökenli olmayan herhangi bir kelime dahildir)
 
->>>>>>> 9330448580da12b2db55e3c0986e94f4b478f10f
     ###Türkçe Alternatifler
     (Her yabancı kelime için Türkçe karşılıklar öner, bu yabacı kelimelere türkçe kökenli olmayan herhangi bir kelime dahildir)
 
