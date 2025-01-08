@@ -4,6 +4,7 @@ export interface AnalysisResult {
     word: string;
     suggestions: string[];
   }[];
+  fixedSentence: string;
   meaning: string;
   analysis: string;
 }

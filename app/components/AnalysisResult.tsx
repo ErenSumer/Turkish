@@ -12,7 +12,12 @@ export default function AnalysisResult({ result }: AnalysisResultProps) {
           Analiz Sonuçları
         </h2>
       </div>
-
+      <section className="space-y-4">
+        <h3 className="text-2xl font-semibold text-white/90">Düzeltilmiş Cümle</h3>
+        <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl">
+          <p className="text-white whitespace-pre-line">{result.fixedSentence}</p>
+        </div>
+      </section>
       {/* Foreign Words Section */}
       <section className="space-y-4">
         <h3 className="text-2xl font-semibold text-white/90">Yabancı Kelimeler</h3>

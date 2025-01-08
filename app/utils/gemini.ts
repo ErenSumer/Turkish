@@ -4,19 +4,21 @@ import type { AnalysisResult } from "@/app/types";
 const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY!);
 
 export async function analyzeText(text: string): Promise<AnalysisResult> {
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
   const prompt = `
     Lütfen aşağıdaki Türkçe metni analiz et:
     "${text}"
 
+
     Analizi şu başlıklar altında yap ve her başlığı ### ile işaretle:
 
     ###Yabancı Kelimeler
     (Metindeki yabancı kökenli kelimeleri listele)
-
+    ###Düzeltme
+    (Metinde tespit ettiğin yabancı kelimeleri cümlenin anlamına göre en iyi düzeltilmiş cümleyi öner, eğer cümlede yabancı kelime bulunamadıysa cümleyi döndür(örn İşe adapte olamıyorum -> İşe uyum sağlayamıyorum))
     ###Türkçe Alternatifler
-    (Her yabancı kelime için Türkçe karşılıklar öner)
+    (Her yabancı kelime için Türkçe karşılıklar öner, bu yabacı kelimelere türkçe kökenli olmayan herhangi bir kelime dahildir)
 
     ###Anlam
     (Metnin anlamını detaylı açıkla)
@@ -47,7 +49,7 @@ export async function analyzeText(text: string): Promise<AnalysisResult> {
   const alternativesText = findSection("Türkçe Alternatifler");
   const meaningText = findSection("Anlam");
   const analysisDetailText = findSection("Detaylı Analiz");
-
+  const fixedSentence = findSection("Düzeltme");
   // Process foreign words and alternatives
   const foreignWords = foreignWordsText
     .split("\n")
@@ -68,13 +70,12 @@ export async function analyzeText(text: string): Promise<AnalysisResult> {
     });
 
   // Process synonyms
-  
 
   return {
     foreignWords,
     alternatives,
     meaning: meaningText,
-
+    fixedSentence: fixedSentence,
     analysis: analysisDetailText,
   };
 }
