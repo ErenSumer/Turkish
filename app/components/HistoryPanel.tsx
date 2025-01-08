@@ -19,7 +19,7 @@ export default function HistoryPanel({
     <div className="fixed right-6 top-6 w-80 bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl p-6">
       <div className="flex justify-between items-center mb-6">
         <h3 className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-          Geçmiş Analizler
+          Geçmiş Çözümlemeler
         </h3>
         <button
           onClick={onClear}
