@@ -13,7 +13,7 @@ export default function TextInput({ onAnalyze, isLoading }: TextInputProps) {
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Analiz etmek istediğiniz metni buraya yazın..."
+        placeholder="Çözümlemek istediğiniz metni buraya yazın..."
         className="w-full h-48 p-6 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl
                text-white placeholder-zinc-500 focus:outline-none focus:ring-2
                focus:ring-blue-500/50 transition-all text-lg"
@@ -25,7 +25,7 @@ export default function TextInput({ onAnalyze, isLoading }: TextInputProps) {
                rounded-xl hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed
                transition-all transform hover:scale-105 active:scale-95"
       >
-        {isLoading ? "Analiz Ediliyor..." : "Analiz Et"}
+        {isLoading ? "Çözümleniyor..." : "Çözümle"}
       </button>
     </div>
   );
